@@ -2,17 +2,20 @@
 from typing import Final
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
-
+from dotenv import load_dotenv
+import os
 #Import Google Gemini AI API
 import google.generativeai as genai
 
 #Initializing Telegram Bot Token and Bot Username 
-TOKEN: Final = '7395781316:AAGlwX9BUnO1VteYFYW8PGQ3EpT3aILs1zU'
+TOKEN: Final = os.getenv("API_KEY")
+
 BOT_USERNAME: Final = '@i_am_just_a_bot'
 
 #Initializing Gemini API token
-api_keyy = "AIzaSyBl3eaRrpZpTt5mHkgk6AJTXeBQKHC6wJc"
-genai.configure(api_key=api_keyy)
+API_KEY = os.getenv("API_KEY")
+
+genai.configure(api_key=API_KEY)
 generation_config = {
   "temperature": 1,
   "top_p": 0.95,
