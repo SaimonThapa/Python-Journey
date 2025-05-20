@@ -10,7 +10,7 @@ import google.generativeai as genai
 #Initializing Telegram Bot Token and Bot Username 
 TOKEN: Final = os.getenv("API_KEY")
 
-BOT_USERNAME: Final = '@i_am_just_a_bot'
+BOT_USERNAME: Final = os.getenv("BOT_USERNAME")
 
 #Initializing Gemini API token
 API_KEY = os.getenv("API_KEY")
